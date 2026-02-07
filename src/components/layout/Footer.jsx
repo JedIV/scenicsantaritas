@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { contactInfo, externalLinks } from '../../data/navigation';
 import './Footer.css';
+import { trackEvent } from '../../analytics/ga';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
 
   const handleNewsletterSubmit = (event) => {
     event.preventDefault();
+    trackEvent('newsletter_signup_click', { location: 'footer' });
     window.open(externalLinks.subscribe, '_blank', 'noopener,noreferrer');
   };
 

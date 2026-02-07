@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import { externalLinks } from '../../data/navigation';
 import './Header.css';
+import { trackEvent } from '../../analytics/ga';
 
 function Header() {
   return (
@@ -20,6 +21,7 @@ function Header() {
             className="btn btn-donate"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('donate_click', { location: 'header' })}
           >
             Donate Now
           </a>

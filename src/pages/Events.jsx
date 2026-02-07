@@ -1,8 +1,10 @@
 import { Hero } from '../components/common';
 import { Link } from 'react-router-dom';
-import { upcomingEvents, pastEvents } from '../data/events';
+import { eventsContent } from '../data/content';
 
 function Events() {
+  const { upcoming, past } = eventsContent;
+
   return (
     <div className="events-page">
       <Hero
@@ -15,10 +17,10 @@ function Events() {
         <div className="container">
           <h2>Upcoming Events</h2>
 
-          {upcomingEvents.length === 0 ? (
+          {upcoming.length === 0 ? (
             <p>No events at the moment. Please check back soon.</p>
           ) : (
-            upcomingEvents.map((event) => (
+            upcoming.map((event) => (
               <div
                 key={event.id}
                 style={{
@@ -42,7 +44,7 @@ function Events() {
 
           <h2 style={{ marginTop: '2.5rem' }}>Past Events</h2>
 
-          {pastEvents.map((event) => (
+          {past.map((event) => (
             <div
               key={event.id}
               style={{

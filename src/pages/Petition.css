@@ -7,6 +7,27 @@
   border-radius: var(--radius-md);
 }
 
+.petition-page .petition-campaign {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: #f5f0e6;
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.petition-page .petition-campaign-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.25rem;
+}
+
+.petition-page .petition-campaign-title {
+  margin-bottom: var(--spacing-sm);
+}
+
 .petition-page .petition-text h2 {
   font-size: 1.4rem;
   margin-bottom: var(--spacing-md);

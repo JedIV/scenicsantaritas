@@ -1,6 +1,6 @@
 import { Hero } from '../components/common';
 import { Card } from '../components/common';
-import { newsArticles } from '../data/newsArticles';
+import { newsArticles } from '../data/content';
 
 function News() {
   const articles = [...newsArticles].sort(
@@ -21,7 +21,7 @@ function News() {
 
           {articles.map((article) => (
             <Card
-              key={article.id}
+              key={article.slug}
               title={article.title}
               description={`${new Date(article.date).toLocaleDateString('en-US', {
                 month: 'long',

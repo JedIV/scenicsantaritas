@@ -1,0 +1,115 @@
+backend:
+  name: github
+  repo: JedIV/scenicsantaritas
+  branch: main
+  # Use GitHub auth (editors log in with GitHub accounts).
+  # Provide a GitHub OAuth App and set its Client ID here.
+  auth_type: implicit
+  client_id: Ov23lihExDQeo4iqdOpq
+
+local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "news"
+    label: "News"
+    folder: "src/content/news"
+    create: true
+    format: "json"
+    extension: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - label: "Body"
+        name: "body"
+        widget: "list"
+        field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+  - name: "events"
+    label: "Events"
+    files:
+      - name: "events"
+        label: "Events"
+        file: "src/content/events.json"
+        format: "json"
+        fields:
+          - label: "Upcoming Events"
+            name: "upcoming"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Past Events"
+            name: "past"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "petition"
+    label: "Petition"
+    files:
+      - name: "petition"
+        label: "Petition Page"
+        file: "src/content/petition.json"
+        format: "json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "text" }
+          - label: "Intro Paragraphs"
+            name: "intro"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Form Intro", name: "formIntro", widget: "text" }
+          - label: "Supporting Documentation"
+            name: "supportingDocs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+  - name: "campaigns"
+    label: "Campaigns"
+    files:
+      - name: "campaigns"
+        label: "Campaigns"
+        file: "src/content/campaigns.json"
+        format: "json"
+        fields:
+          - label: "UTM Guidance"
+            name: "utm_guidance"
+            widget: "markdown"
+            default: |
+              Use standard UTM values from ad platforms.
+              Example: utm_source=google, utm_medium=cpc, utm_campaign=spring_2026_petition
+            required: false
+            hint: "This field is informational only."
+          - label: "Campaigns"
+            name: "campaigns"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options: ["active", "paused", "ended"]
+              - { label: "UTM Source", name: "utm_source", widget: "string" }
+              - { label: "UTM Medium", name: "utm_medium", widget: "string" }
+              - { label: "UTM Campaign", name: "utm_campaign", widget: "string" }
+              - { label: "CTA Text", name: "cta_text", widget: "string" }
+              - { label: "CTA Link", name: "cta_link", widget: "string" }
+              - { label: "Start Date", name: "start_date", widget: "datetime", format: "YYYY-MM-DD", required: false }
+              - { label: "End Date", name: "end_date", widget: "datetime", format: "YYYY-MM-DD", required: false }

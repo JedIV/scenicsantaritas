@@ -1,0 +1,16 @@
+{
+  "campaigns": [
+    {
+      "id": "spring-2026-petition-push",
+      "name": "Spring 2026 Petition Push",
+      "status": "active",
+      "utm_source": "google",
+      "utm_medium": "cpc",
+      "utm_campaign": "spring_2026_petition",
+      "cta_text": "Share the Petition",
+      "cta_link": "https://scenicsantaritas.org/petition",
+      "start_date": "2026-02-01",
+      "end_date": "2026-05-31"
+    }
+  ]
+}

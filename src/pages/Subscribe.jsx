@@ -1,5 +1,6 @@
 import { Hero } from '../components/common';
 import { externalLinks } from '../data/navigation';
+import { trackEvent } from '../analytics/ga';
 
 function Subscribe() {
   return (
@@ -33,6 +34,7 @@ function Subscribe() {
               className="btn btn-primary"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('subscribe_click')}
             >
               Open the Signup Form
             </a>

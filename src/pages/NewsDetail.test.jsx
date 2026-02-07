@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { renderWithRouter } from '../test/test-utils';
 import NewsDetail from './NewsDetail';
-import { newsArticles } from '../data/newsArticles';
+import { newsArticles } from '../data/content';
 
 describe('NewsDetail', () => {
   it('renders a matching article', () => {

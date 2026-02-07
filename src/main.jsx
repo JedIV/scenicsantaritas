@@ -1,6 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import { initGA } from './analytics/ga'
+import { persistUtmParams } from './analytics/utm'
+
+persistUtmParams();
+initGA();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

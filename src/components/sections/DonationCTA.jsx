@@ -1,5 +1,6 @@
 import { externalLinks } from '../../data/navigation';
 import './DonationCTA.css';
+import { trackEvent } from '../../analytics/ga';
 
 function DonationCTA() {
   return (
@@ -16,6 +17,7 @@ function DonationCTA() {
               className="btn btn-donate donation-btn"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('donate_click', { location: 'donation_cta' })}
             >
               Donate today <span aria-hidden="true">❯</span>
             </a>

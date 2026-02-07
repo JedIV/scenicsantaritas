@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Card } from '../common';
-import { newsArticles } from '../../data/newsArticles';
+import { newsArticles } from '../../data/content';
 import './NewsSection.css';
 
 function NewsSection({ limit = 5 }) {
@@ -13,7 +13,7 @@ function NewsSection({ limit = 5 }) {
       <div className="container">
         {articles.map((article) => (
           <Card
-            key={article.id}
+            key={article.slug}
             title={article.title}
             description={article.excerpt}
             image={article.image}

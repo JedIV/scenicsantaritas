@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { Hero } from '../components/common';
-import { newsArticles } from '../data/newsArticles';
+import { newsArticles } from '../data/content';
 import './NewsDetail.css';
 
 function NewsDetail() {

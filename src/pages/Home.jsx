@@ -27,6 +27,38 @@ function Home() {
         </div>
       </section>
 
+      {/* Act Now Section */}
+      <section className="act-now-section section">
+        <div className="container">
+          <h2 className="text-center">Act Now!</h2>
+          <p className="act-now-intro text-center">
+            Protect the Santa Rita Mountains. Get involved today.
+          </p>
+          <div className="act-now-grid">
+            <div className="act-now-card">
+              <h3>Sign the Petition</h3>
+              <p>Ask the Sahuarita Town Council to hold a public hearing.</p>
+              <Link to="/petition" className="btn btn-secondary">Sign Now</Link>
+            </div>
+            <div className="act-now-card">
+              <h3>Write Letters</h3>
+              <p>Contact decision makers and add your voice.</p>
+              <Link to="/letters" className="btn btn-secondary">Get Started</Link>
+            </div>
+            <div className="act-now-card">
+              <h3>Volunteer</h3>
+              <p>Join outreach, events, and research teams.</p>
+              <Link to="/volunteer" className="btn btn-secondary">Volunteer</Link>
+            </div>
+            <div className="act-now-card">
+              <h3>Stay Informed</h3>
+              <p>Subscribe for updates and event alerts.</p>
+              <Link to="/subscribe" className="btn btn-secondary">Subscribe</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Town Hall Video Section */}
       <section className="townhall-section section section-light">
         <div className="container">
@@ -41,7 +73,7 @@ function Home() {
             />
           </div>
           <div className="text-center" style={{ marginTop: 'var(--spacing-md)' }}>
-            <a href="/updates" className="btn btn-secondary">View the Slides</a>
+            <Link to="/updates" className="btn btn-secondary">View the Slides</Link>
           </div>
         </div>
       </section>
@@ -53,9 +85,15 @@ function Home() {
       <section className="info-section section section-dark">
         <div className="container text-center">
           <h2 className="info-title">
-            Learn more about Copper World's threat<br />
+            Learn more about Copper World&apos;s threat<br />
             to the aquifer and future water bills
           </h2>
+          <p className="info-text">
+            The Copper World proposal would pump massive amounts of groundwater from the regional aquifer.
+          </p>
+          <Link to="/updates" className="btn btn-secondary info-cta">
+            Learn More
+          </Link>
         </div>
       </section>
 

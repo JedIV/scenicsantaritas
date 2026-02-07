@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom';
-import { contactInfo } from '../../data/navigation';
+import { contactInfo, externalLinks } from '../../data/navigation';
 import './Footer.css';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const handleNewsletterSubmit = (event) => {
+    event.preventDefault();
+    window.open(externalLinks.subscribe, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <footer className="footer">
@@ -12,7 +17,7 @@ function Footer() {
           {/* Newsletter Section */}
           <div className="footer-section">
             <h3 className="footer-title">Newsletter</h3>
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -24,8 +29,7 @@ function Footer() {
               </button>
             </form>
             <p className="newsletter-note">
-              You will receive an email asking you to confirm your subscription.
-              If you don't see the email, please check your junk folder.
+              You will not be added unless you confirm your subscription by email.
             </p>
           </div>
 

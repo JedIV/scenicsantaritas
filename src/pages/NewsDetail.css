@@ -1,0 +1,30 @@
+.news-detail-container {
+  max-width: 820px;
+}
+
+.news-detail-date {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.news-detail-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.news-detail-image {
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.news-detail-body p {
+  margin-bottom: var(--spacing-md);
+}
+
+.news-detail-actions {
+  margin-top: var(--spacing-lg);
+}

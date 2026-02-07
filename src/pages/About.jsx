@@ -40,7 +40,7 @@ function About() {
             {boardMembers.map((member) => (
               <div key={member.name} className="team-member">
                 <div className="member-photo">
-                  <img src="/images/placeholder-person.jpg" alt={member.name} />
+                  <img src="/images/logo.png" alt={member.name} />
                 </div>
                 <h3 className="member-name">{member.name}</h3>
                 <p className="member-role">{member.role}</p>

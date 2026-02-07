@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
+import { externalLinks } from '../../data/navigation';
 import './Header.css';
 
 function Header() {
@@ -15,7 +16,7 @@ function Header() {
             <input type="search" placeholder="Search..." aria-label="Search" />
           </div>
           <a
-            href="https://www.paypal.com/donate/?hosted_button_id=XXXXXXX"
+            href={externalLinks.donate}
             className="btn btn-donate"
             target="_blank"
             rel="noopener noreferrer"

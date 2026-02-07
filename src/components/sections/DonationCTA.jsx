@@ -1,3 +1,4 @@
+import { externalLinks } from '../../data/navigation';
 import './DonationCTA.css';
 
 function DonationCTA() {
@@ -11,7 +12,7 @@ function DonationCTA() {
               alt="Watercolor painting of the Santa Rita Mountains"
             />
             <a
-              href="https://www.paypal.com/donate/?hosted_button_id=XXXXXXX"
+              href={externalLinks.donate}
               className="btn btn-donate donation-btn"
               target="_blank"
               rel="noopener noreferrer"

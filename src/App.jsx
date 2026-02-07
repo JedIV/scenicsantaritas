@@ -8,9 +8,13 @@ import Subscribe from './pages/Subscribe';
 import Events from './pages/Events';
 import Updates from './pages/Updates';
 import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
 import FAQ from './pages/FAQ';
 import Maps from './pages/Maps';
 import Petition from './pages/Petition';
+import Rosemont from './pages/Rosemont';
+import Story from './pages/Story';
+import ActNow from './pages/ActNow';
 import './styles/global.css';
 
 function App() {
@@ -26,12 +30,13 @@ function App() {
           <Route path="events" element={<Events />} />
           <Route path="updates" element={<Updates />} />
           <Route path="news" element={<News />} />
-          <Route path="news/:slug" element={<News />} />
+          <Route path="news/:slug" element={<NewsDetail />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="maps" element={<Maps />} />
           <Route path="petition" element={<Petition />} />
-          <Route path="rosemont" element={<Updates />} />
-          <Route path="act-now" element={<Letters />} />
+          <Route path="rosemont" element={<Rosemont />} />
+          <Route path="story" element={<Story />} />
+          <Route path="act-now" element={<ActNow />} />
         </Route>
       </Routes>
     </BrowserRouter>

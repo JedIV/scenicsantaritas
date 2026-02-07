@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Maps.css';
 
 const mapResources = [
@@ -62,14 +62,40 @@ const mapResources = [
 function Maps() {
   const [selectedMap, setSelectedMap] = useState(null);
 
+  useEffect(() => {
+    if (selectedMap) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+
+    document.body.style.overflow = '';
+    return undefined;
+  }, [selectedMap]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedMap(null);
+      }
+    };
+
+    if (selectedMap) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedMap]);
+
   const openLightbox = (map) => {
     setSelectedMap(map);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setSelectedMap(null);
-    document.body.style.overflow = '';
   };
 
   return (
@@ -108,15 +134,17 @@ function Maps() {
           <div className="maps-grid">
             {mapResources.map((resource) => (
               <div key={resource.id} className="map-card">
-                <div
+                <button
+                  type="button"
                   className="map-card-image"
+                  aria-label={`Open ${resource.title} map`}
                   onClick={() => openLightbox(resource)}
                 >
                   <img src={resource.image} alt={resource.title} />
                   <div className="map-card-zoom">
                     <span>Click to enlarge</span>
                   </div>
-                </div>
+                </button>
                 <div className="map-card-content">
                   <h3 className="map-card-title">{resource.title}</h3>
                   <p className="map-card-description">{resource.description}</p>

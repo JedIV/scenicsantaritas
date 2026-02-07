@@ -33,6 +33,11 @@
   background-color: #e8e8e8;
 }
 
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .nav-link--active {
   color: var(--color-white);
   background-color: #4a7c78;

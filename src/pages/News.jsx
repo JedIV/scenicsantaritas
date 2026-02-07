@@ -3,6 +3,10 @@ import { Card } from '../components/common';
 import { newsArticles } from '../data/newsArticles';
 
 function News() {
+  const articles = [...newsArticles].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+
   return (
     <div className="news-page">
       <Hero
@@ -15,11 +19,15 @@ function News() {
         <div className="container">
           <h2>Latest News & Updates</h2>
 
-          {newsArticles.map((article) => (
+          {articles.map((article) => (
             <Card
               key={article.id}
               title={article.title}
-              description={article.excerpt}
+              description={`${new Date(article.date).toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })} — ${article.excerpt}`}
               image={article.image}
               link={`/news/${article.slug}`}
               linkText="Read more"

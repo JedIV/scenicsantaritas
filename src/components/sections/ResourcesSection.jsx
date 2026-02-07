@@ -10,13 +10,25 @@ function ResourcesSection() {
 
         <div className="resources-grid">
           {resourceLinks.map((resource) => (
-            <Link
-              key={resource.id}
-              to={resource.path}
-              className="resource-circle"
-            >
-              <span className="resource-label">{resource.label}</span>
-            </Link>
+            resource.external ? (
+              <a
+                key={resource.id}
+                href={resource.path}
+                className="resource-circle"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="resource-label">{resource.label}</span>
+              </a>
+            ) : (
+              <Link
+                key={resource.id}
+                to={resource.path}
+                className="resource-circle"
+              >
+                <span className="resource-label">{resource.label}</span>
+              </Link>
+            )
           ))}
         </div>
       </div>

@@ -4,7 +4,9 @@ import { newsArticles } from '../../data/newsArticles';
 import './NewsSection.css';
 
 function NewsSection({ limit = 5 }) {
-  const articles = newsArticles.slice(0, limit);
+  const articles = [...newsArticles].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  ).slice(0, limit);
 
   return (
     <section className="news-section section">

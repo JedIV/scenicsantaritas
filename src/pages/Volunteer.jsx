@@ -1,4 +1,5 @@
 import { Hero } from '../components/common';
+import { externalLinks } from '../data/navigation';
 
 function Volunteer() {
   return (
@@ -29,6 +30,15 @@ function Volunteer() {
           <p>
             Contact us at <a href="mailto:info@scenicsantaritas.org">info@scenicsantaritas.org</a> to learn more about volunteer opportunities.
           </p>
+
+          <a
+            href={externalLinks.volunteerSignup}
+            className="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Volunteer Signup Form
+          </a>
         </div>
       </section>
     </div>

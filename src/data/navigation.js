@@ -1,3 +1,11 @@
+export const externalLinks = {
+  donate: 'https://www.scenicsantaritas.org/donate',
+  subscribe: 'https://www.scenicsantaritas.org/email-membership-sign-up',
+  mineTruth: 'https://www.rosemontminetruth.com',
+  shop: 'https://tinyurl.com/ShopSSSR',
+  volunteerSignup: 'https://secure.lglforms.com/form_engine/s/8Hpkfr8EvL8k0S8pOUt-Ow',
+};
+
 export const mainNavigation = [
   {
     label: 'Home',
@@ -15,7 +23,7 @@ export const mainNavigation = [
       { label: 'Volunteer', path: '/volunteer' },
       { label: 'Sign the Petition', path: '/petition' },
       { label: 'Subscribe', path: '/subscribe' },
-      { label: 'Shop', path: 'https://tinyurl.com/ShopSSSR', external: true },
+      { label: 'Shop', path: externalLinks.shop, external: true },
     ],
   },
   {
@@ -40,7 +48,7 @@ export const mainNavigation = [
 
 export const footerLinks = {
   quickLinks: [
-    { label: 'Mine Truth', path: '/updates' },
+    { label: 'Mine Truth', path: '/rosemont' },
     { label: 'Events', path: '/events' },
     { label: 'Newsletter', path: '/subscribe' },
     { label: 'Newsroom', path: '/news' },

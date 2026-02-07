@@ -15,12 +15,14 @@ import Petition from './pages/Petition';
 import Rosemont from './pages/Rosemont';
 import Story from './pages/Story';
 import ActNow from './pages/ActNow';
+import AdminRedirect from './pages/AdminRedirect';
 import './styles/global.css';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/admin/*" element={<AdminRedirect />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />

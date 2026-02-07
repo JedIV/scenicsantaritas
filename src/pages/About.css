@@ -1,0 +1,66 @@
+.about-page .mission-section {
+  background-color: var(--color-white);
+  padding: var(--spacing-xxl) 0;
+}
+
+.about-page .mission-section h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-page .mission-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.team-section {
+  padding: var(--spacing-xxl) 0;
+}
+
+.team-section h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xl);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto var(--spacing-sm);
+  border-radius: var(--radius-round);
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 1.125rem;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.member-role {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}

@@ -1,0 +1,115 @@
+.petition-page .petition-text {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-light);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.petition-page .petition-text h2 {
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary-dark);
+}
+
+.petition-page .petition-text p {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.7;
+}
+
+.petition-page .petition-form-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.petition-page .petition-form-section h2 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.petition-page .petition-form-section > p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+.petition-page .form-row {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.petition-page .form-group {
+  margin-bottom: var(--spacing-sm);
+  flex: 1;
+}
+
+.petition-page .form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.petition-page .form-group input,
+.petition-page .form-group textarea,
+.petition-page .form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+.petition-page .form-group input:focus,
+.petition-page .form-group textarea:focus,
+.petition-page .form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(26, 86, 83, 0.15);
+}
+
+.petition-page .form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.petition-page .form-submit {
+  margin-top: var(--spacing-md);
+}
+
+.petition-page .form-submit .btn {
+  font-size: 1.1rem;
+  padding: 0.85rem 2.5rem;
+}
+
+.petition-page .form-note {
+  margin-top: var(--spacing-sm);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.petition-page .supporting-docs {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.petition-page .supporting-docs h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.petition-page .supporting-docs p {
+  line-height: 1.7;
+  margin-bottom: var(--spacing-sm);
+}
+
+@media (max-width: 600px) {
+  .petition-page .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .petition-page .petition-text {
+    padding: var(--spacing-sm);
+  }
+}

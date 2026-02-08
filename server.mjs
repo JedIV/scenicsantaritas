@@ -50,7 +50,12 @@ const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(requestUrl.pathname);
 
-  if (pathname === '/admin' || pathname === '/admin/') {
+  if (pathname === '/admin') {
+    res.writeHead(301, { Location: '/admin/' });
+    return res.end();
+  }
+
+  if (pathname === '/admin/') {
     const adminIndex = path.join(distDir, 'admin', 'index.html');
     if (fs.existsSync(adminIndex)) {
       return sendFile(res, adminIndex);

@@ -7,8 +7,6 @@ backend:
   auth_type: implicit
   client_id: Ov23lihExDQeo4iqdOpq
 
-local_backend: true
-
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 

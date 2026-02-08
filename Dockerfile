@@ -19,14 +19,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Install serve globally
-RUN npm install -g serve
-
-# Copy built files from builder
+# Copy built files and server from builder
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/server.mjs ./server.mjs
 
 # Expose port
 EXPOSE 3000
 
 # Start the server
-CMD ["sh", "-c", "serve -s dist -l tcp://0.0.0.0:${PORT:-3000}"]
+CMD ["node", "server.mjs"]
